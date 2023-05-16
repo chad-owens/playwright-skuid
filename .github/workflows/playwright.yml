@@ -10,10 +10,10 @@ jobs:
 
     steps:
       - name: Clone Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Install node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: 18
 
@@ -31,9 +31,9 @@ jobs:
           SKUID_PW: ${{ secrets.SKUID_PW }}
           
       - name: Store Reports
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: always()
         with:
           name: playwright-report
-          path: playwright/
+          path: .
           retention-days: 30
