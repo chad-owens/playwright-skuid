@@ -2,3 +2,4 @@ node_modules
 cookies
 .env
 .vscode
+**/test-results.json

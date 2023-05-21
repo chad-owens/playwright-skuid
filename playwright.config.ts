@@ -15,7 +15,7 @@ export default defineConfig({
   // Reporters
   reporter: [
     ['list'],
-    ['json', { outputFile: '../test-results.json' }],
+    ['json', { outputFile: 'test-results.json' }],
   ],
   // Shared setting for all projects
   use: {
