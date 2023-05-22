@@ -47,7 +47,7 @@ export class TacoConsole {
      */
     async pushItemsToMenu() {
         // Click Push items button
-        await this.page.getByText('Push items to menu').click();
+        await this.page.getByText('Publish items to menu').click();
         // Wait for UI Blocker not visible
         const uiBlocker = this.page.getByText('Adding items to menu...');
         await uiBlocker.waitFor({ state: 'visible' });
