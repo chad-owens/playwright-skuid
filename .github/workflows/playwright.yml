@@ -7,6 +7,9 @@ jobs:
   run-smoke-tests:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        suite: [ smokeChrome, smokeFirefox ]
 
     steps:
       - name: Clone Repo
@@ -24,7 +27,7 @@ jobs:
 
       - name: Run Smoke Tests
         run:  | 
-          npx playwright test --config=tests/nlx --project=smoke
+          npx playwright test --config=tests/nlx --project=${{ matrix.suite }}
         env:
           SKUID_HOST: ${{ secrets.SKUID_HOST }}
           SKUID_UN: ${{ secrets.SKUID_UN }}
