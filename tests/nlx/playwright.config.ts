@@ -9,9 +9,15 @@ export default defineConfig({
             testDir: '../../tests/nlx/setup'
         },
         {
-            name: 'smoke',
+            name: 'smokeChrome',
             testDir: '../../tests/nlx/smoke',
             use: { ...devices['Desktop Chrome'] },
+            dependencies: ['setup']
+        },
+          {
+            name: 'smokeFirefox',
+            testDir: '../../tests/nlx/smoke',
+            use: { ...devices['Desktop Firefox'] },
             dependencies: ['setup']
         }
     ]
